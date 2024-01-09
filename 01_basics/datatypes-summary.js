@@ -71,3 +71,33 @@ console.log(typeof MyFunc)  //funtion or object funtion
 
 //Note: typeof operator → https://tc39.es/ecma262/#sec-typeof-operator
 //return type of all these Non Primitive D.T → Object
+
+
+//--------------------------------------------------------------------------
+
+/* 
+Memory allocation in JS:
+    Stack(Primitive), Heap(Non Primitive)
+    Refer: https://youtu.be/sscX432bMZo?t=7205
+*/
+
+//Stack(Primitive) → Call by value (have copy of value)
+let myYoutubename = "rahulambiger"
+// let anotherName = myYoutubename
+let anotherName = "rahulA"
+
+console.log(myYoutubename);
+console.log(anotherName);
+
+//Heap(Non Primitive) → Call by reference(will have original memory reference)
+let userOne = {
+    email:"user@gmail.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+userTwo.email = "rahul@google.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)
+
