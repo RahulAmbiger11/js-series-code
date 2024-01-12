@@ -26,3 +26,16 @@ console.log(myTimeStamp)
 console.log(createdDate.getTime()) // in milli seconds
 
 console.log(Math.floor(Date.now()/1000))  // Converted to secs format
+
+let newDate1 = new Date()
+console.log(newDate1.getMonth() + 1)  // month always starts from 0
+console.log(newDate1.getDate())  // current date
+console.log(newDate1.getDay())  // present day
+
+//string interpolation
+console.log(`Current date is ${newDate1.getDate()} and day is ${newDate1.getDay()}` );
+
+//Imp method of Date()
+newDate.toLocaleString('default', {
+    weekday:'long',
+})
