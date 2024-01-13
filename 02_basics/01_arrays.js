@@ -37,3 +37,16 @@ console.log(typeof newArr)  //string
 
 //slice() & splice() → ** IMP IQ **
 
+// slice() → doesn't leads to manipulation of org. array
+console.log("A ", myArr) //[23,1,2,3,4,5]
+const myn1 = myArr.slice(1,3) 
+console.log(myn1)  //[1,2]
+
+console.log("B ", myArr)
+
+//splice() → leads to manipulation of org. array & removes particular portion of array from org.array
+const myn2 = myArr.splice(1,3)
+console.log("C ", myArr) //[23,4,5]
+console.log(myn2) //[1,2,3]
+
+
