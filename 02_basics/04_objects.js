@@ -62,4 +62,40 @@ console.log(Object.entries(InstaUser)) // array of entries
 
 
 //To know wether object has particular property
-console.log(InstaUser.hasOwnProperty('isLoggedIn'))
+console.log(InstaUser.hasOwnProperty('isLoggedIn')) 
+
+
+
+//--------------- Destructuring of objects --------------------------
+const course = {
+    c_name: "JS",
+    c_price: 999,
+    c_instructor: "rahul"
+}
+
+const {c_instructor: Instructor, c_price} = course
+console.log(Instructor)
+console.log(c_price) 
+
+// ---------------- JSON API --------------------------------
+
+/* {
+    "id": "JS_01",
+    "name" : "JS in Hindi",
+    "price" : "free"
+} */
+
+
+/* [
+    {
+
+    },
+
+    {
+
+    },
+
+    {
+
+    }
+] */
