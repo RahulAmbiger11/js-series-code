@@ -29,22 +29,22 @@ function kbc() {
 
 kbc()
 
-const chaiPeCharcha = function() {
+const chaiPeCharcha1 = function() {
     let username = "Rahul"
     console.log(this.username) //indefined
 }
 
-chaiPeCharcha()
+chaiPeCharcha1()
 
 // Arrow function
 
-l/* et chaiPeCharcha = () => {
+let chaiPeCharcha2 = () => {
     let username = "Rahul"
     // console.log(this.username)
     console.log(this)  // {}
 }
 
-chaiPeCharcha() */
+chaiPeCharcha2() 
 
 //Explicit return 
 const addTwo = (num1, num2) => {
