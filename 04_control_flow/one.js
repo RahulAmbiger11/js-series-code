@@ -50,3 +50,10 @@ Not Recommended
 if(loggedInFromGoogle || loggedInFromEmail) {
     console.log("Logged in Successfully!!")
 }
+
+/*
+
+logical Operators
+||(atleast one condition should be true) , && (all the condtions should be true)
+
+*/
