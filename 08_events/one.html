@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Events</title>
 </head>
+
 <body style="background-color: #414141; color: aliceblue;">
     <h2>Amazing image</h2>
-    <div >
+    <div>
         <ul id="images">
-            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
-            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
-            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
             <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
-   </div>
-    
+    </div>
+
 </body>
 <script>
     //Events in javascript runs sequentially But there are some exceptions.
@@ -29,30 +41,30 @@
 
     //attachEvent() → In Internet Explorer
     //JQuery → on()
-    
+
     //Events are of majorly two types - 1. Browser events 2. Environment events.
-    
+
     //** Imp. Events for Interviews **
     //type, timestamp, defaultPrevented
     //target, toElement, srcElement, currentTarget,
     //clientX, clientY, screenX, screenY
     //altKey, ctrlKey, shiftKey, keyCode
-    
+
     //Best Approach(Recommended)
 
 
     //Event Propagation - 1. Event bubbling 2. Event capturing.
     // 1. Event bubbling → Inside element to outside element
 
-    document.getElementById('images').addEventListener('click', function(e){
+    /* document.getElementById('images').addEventListener('click', function (e) {
         console.log("Clicked inside ul")
     }, false)
 
-    document.getElementById('owl').addEventListener('click', function(e){
+    document.getElementById('owl').addEventListener('click', function (e) {
         console.log("Owl clicked")
         e.stopPropagation() //to prevent bubbling up of element
     }, false)
-
+ */
     // 2. Event capturing → Outside element to inside element.
     /* document.getElementById('images').addEventListener('click', function(e){
         console.log("Clicked inside ul")
@@ -63,21 +75,34 @@
     }, true) */
 
     //usage of preventDefault()
-    document.getElementById('google').addEventListener('click', function(e) {
+    /* document.getElementById('google').addEventListener('click', function(e) {
         e.preventDefault()
         e.stopPropagation()  
         console.log("Google clicked")
     },false)
 
+ */
 
 
-    
+    //To remove particular li and image element
+    //Event Spill Over
+    document.querySelector("#images").addEventListener('click', function (e) {
+        // console.log(e.target.parentNode)
 
+        console.log(e.target.tagName)
 
+        if(e.target.tagName == 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
 
-    
+        // removeIt.remove() //to remove particular li
 
-
+        //OR
+        // removeIt.parentNode.removeChild(removeIt)
+    })
 
 </script>
+
 </html>
