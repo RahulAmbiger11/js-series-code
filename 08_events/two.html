@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Code</title>
+</head>
+<body>
+    <h1>Let's learn about Async Code</h1>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+    //setTimeOut() → after certain amt. of time it does the certain amt of task.
+    //has "Handler"→ works same as 'callback' without function name & "time" in milliseconds.
+    
+/*  setTimeout(function() {
+        console.log("Rahul")
+    }, 2000)
+*/
+
+/* let sayRahul = function() {
+    console.log("Hello Rahul!")
+}
+
+const changeText = function() {
+    document.querySelector('h1').innerHTML = "Best JS Series"
+}
+
+changeMe = setTimeout(changeText, 2000)
+ */
+//passing function reference
+//setTimeout(sayRahul, 2000)
+
+//clearTimeout(changeMe) → clears the setTimeOut() functionality
+
+
+
+// Best approach to use setTimeOut() & clearTimeOut() functionality
+//Applying it on "click" event
+
+const boloShriRam = function() {
+    document.querySelector('h1').innerHTML = "Awesome JS Series!!"
+}
+
+const change_Text = setTimeout(boloShriRam, 2000)
+
+
+document.querySelector('#stop').addEventListener('click', function() {
+    clearInterval(change_Text)
+    console.log("STOPPED!!")
+})
+
+</script>
+</html>
